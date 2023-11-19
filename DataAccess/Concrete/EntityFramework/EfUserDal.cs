@@ -10,11 +10,11 @@ using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfUserDal : EfEntityRepositoryBase<User, YourDatabaseContext>, IUserDal
+    public class EfUserDal : EfEntityRepositoryBase<User, BookStoreDatabaseContext>, IUserDal
     {
         public List<OperationClaim> GetClaims(User user)
         {
-            using (var context = new YourDatabaseContext())
+            using (var context = new BookStoreDatabaseContext())
             {
                 var result = from operationClaim in context.OperationClaims
                     join userOperationClaim in context.UserOperationClaims
