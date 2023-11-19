@@ -11,6 +11,7 @@ using Core.Utilities.Business;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -58,7 +59,10 @@ namespace Business.Concrete
             _bookDal.Delete(book);
             return new SuccessResult(Messages.BookDeleted);
         }
-
+        public IDataResult<List<BookDetailDto>> GetBookDetails()
+        {
+            return new SuccessDataResult<List<BookDetailDto>>(_bookDal.GetProductDetails());
+        }
 
         #region Business Rules
 
@@ -70,6 +74,8 @@ namespace Business.Concrete
 
             return new SuccessResult();
         }
+
+        
 
         #endregion
     }

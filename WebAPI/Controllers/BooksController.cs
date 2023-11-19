@@ -46,6 +46,21 @@ namespace WebAPI.Controllers
             }
         }
 
+        [HttpGet("getallbookdetails")]
+        public IActionResult GetAllBookDetails()
+        {
+            var result = _bookService.GetBookDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            else
+            {
+
+                return BadRequest(result);
+            }
+        }
+
         [HttpPost("add")]
         public IActionResult Add(Book book)
         {

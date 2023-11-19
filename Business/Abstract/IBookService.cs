@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Core.Utilities.Business.BusinessAbstract;
 using Core.Utilities.Results;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Abstract
 {
@@ -13,5 +14,6 @@ namespace Business.Abstract
     {
         IDataResult<List<Book>> GetAllBooks();
         IDataResult<Book> GetBookById(int id);
+        IDataResult<List<BookDetailDto>> GetBookDetails();
     }
 }
