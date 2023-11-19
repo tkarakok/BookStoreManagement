@@ -7,19 +7,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BooksController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
-        private IBookService _bookService;
+        private ICategoryService _categoryService;
 
-        public BooksController(IBookService bookService)
+        public CategoriesController(ICategoryService categoryService)
         {
-            _bookService = bookService;
+            _categoryService = categoryService;
         }
 
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _bookService.GetAllBooks();
+            var result = _categoryService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -31,10 +31,10 @@ namespace WebAPI.Controllers
             }
         }
 
-        [HttpGet("getbookbyid")]
-        public IActionResult GetBookById(int id)
+        [HttpGet("getcategorybyid")]
+        public IActionResult GetCategoryById(int id)
         {
-            var result = _bookService.GetBookById(id);
+            var result = _categoryService.GetCategoryById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -47,9 +47,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Book book)
+        public IActionResult Add(Category category)
         {
-            var result = _bookService.Add(book);
+            var result = _categoryService.Add(category);
             if (result.Success)
             {
                 return Ok(result);
