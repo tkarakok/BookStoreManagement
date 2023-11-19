@@ -9,10 +9,10 @@ using Entities.Concrete;
 
 namespace Business.Abstract
 {
-    public interface ICategoryService : IService<Category>
+    public interface IAuthorService : IService<Author>
     {
-        IDataResult<List<Category>> GetAll();
-        IDataResult<Category> GetCategoryById(int id);
+        IDataResult<List<Author>> GetAllAuthor();
+        IDataResult<Author> GetAuthor(int id);
 
     }
 }
