@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Abstaract
+namespace DataAccess.Abstract
 {
     public interface IUserDal : IEntityRepository<User>
     {

@@ -1,6 +1,6 @@
 ﻿using Business.Abstaract;
 using Core.Entities.Concrete;
-using DataAccess.Abstaract;
+using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Core.DataAccess.EntityFramework;
 using Core.Entities.Concrete;
-using DataAccess.Abstaract;
+using DataAccess.Abstract;
 using System.Linq;
 
 namespace DataAccess.Concrete.EntityFramework
