@@ -1,7 +1,7 @@
 using Autofac;
 using Autofac.Core;
 using Autofac.Extensions.DependencyInjection;
-using Business.Abstaract;
+using Business.Abstract;
 using Business.Concrete;
 using Business.DependencyResolves.Autofac;
 using Core.DependencyResolver;

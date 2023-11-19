@@ -15,6 +15,6 @@ namespace Entities.Concrete
         public int AuthorId { get; set; }
         public int UnitsInStock { get; set; }
         public int Price { get; set; }
-        public string Description { get; set; }
+        public string Decription { get; set; }
     }
 }
