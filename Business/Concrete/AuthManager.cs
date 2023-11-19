@@ -1,4 +1,4 @@
-﻿using Business.Abstaract;
+﻿using Business.Abstract;
 using Business.Constants;
 using Core.Entities.Concrete;
 using Core.Entities.DTOs;

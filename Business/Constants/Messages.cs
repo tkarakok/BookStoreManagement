@@ -16,5 +16,12 @@ namespace Business.Constants
         public static string SuccessfulLogin = "Başarılı Giriş";
         public static string UserAlreadyExists = "Kullanıcı zaten mevcut";
         public static string AccessTokenCreated = "token oluşturuldu";
+
+        public static string BookNameExists = "Bookname has already exists";
+        public static string BookAdded = "Book succesfully added !";
+
+        public static string BookUpdated = "Book updated !";
+
+        public static string BookDeleted = "Book succesfully deleted !";
     }
 }
