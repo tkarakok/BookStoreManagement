@@ -9,6 +9,7 @@ using Core.Aspects.AutoFac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -29,6 +30,11 @@ namespace Business.Concrete
         public IDataResult<Category> GetCategoryById(int id)
         {
             return new SuccessDataResult<Category>(_categoryDal.Get(c => c.Id == id));
+        }
+
+        public IDataResult<List<CategoryDetailsDto>> GetCategoryDetails()
+        {
+            return new SuccessDataResult<List<CategoryDetailsDto>>(_categoryDal.GetCategoryDetails());
         }
 
         [ValidationAspect(typeof(CategoryValidator))]

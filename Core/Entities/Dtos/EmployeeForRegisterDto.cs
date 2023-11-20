@@ -2,7 +2,7 @@
 
 namespace Core.Entities.DTOs;
 
-public class UserForRegisterDto : IDto
+public class EmployeeForRegisterDto : IDto
 {
     public string Email { get; set; }
     public string Password { get; set; }

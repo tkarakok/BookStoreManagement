@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities.DTOs
 {
-    public class UserForLoginDto : IDto
+    public class EmployeeForLoginDto : IDto
     {
         public string Email { get; set; }
         public string Password { get; set; }

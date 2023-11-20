@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-    public interface IUserService
+    public interface IEmployeeService
     {
-        List<OperationClaim> GetClaims(User user);
-        void Add(User user);
-        User GetByMail(string email);
+        List<OperationClaim> GetClaims(Employee user);
+        void Add(Employee user);
+        Employee GetByMail(string email);
     }
 }

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Core.Entities.Concrete;
 using Entities.Concrete;
 using Microsoft.EntityFrameworkCore;
+using Employee = Core.Entities.Concrete.Employee;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -18,13 +19,12 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"Server = (localdb)\mssqllocaldb ; Database = BookStore ; Trusted_Connection = true");
         }
 
-        public DbSet<User> Users{ get; set; }
+        public DbSet<Employee> Employees{ get; set; }
         public DbSet<OperationClaim> OperationClaims { get; set; }
-        public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
+        public DbSet<EmployeeOperationClaim> EmployeeOperationClaims { get; set; }
         public DbSet<Book> Books{ get; set; }
         public DbSet<Author> Authors{ get; set; }
         public DbSet<Category> Categories{ get; set; }
-        public DbSet<Employee> Employees{ get; set; }
         public DbSet<Customer> Customers{ get; set; }
     }
 }

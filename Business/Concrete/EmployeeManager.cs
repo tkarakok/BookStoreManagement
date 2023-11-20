@@ -9,26 +9,26 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class UserManager : IUserService
+    public class EmployeeManager : IEmployeeService
     {
-        IUserDal _userDal;
+        IEmployeeDal _userDal;
 
-        public UserManager(IUserDal userDal)
+        public EmployeeManager(IEmployeeDal userDal)
         {
             _userDal = userDal;
         }
 
-        public List<OperationClaim> GetClaims(User user)
+        public List<OperationClaim> GetClaims(Employee user)
         {
             return _userDal.GetClaims(user);
         }
 
-        public void Add(User user)
+        public void Add(Employee user)
         {
             _userDal.Add(user);
         }
 
-        public User GetByMail(string email)
+        public Employee GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
         }
