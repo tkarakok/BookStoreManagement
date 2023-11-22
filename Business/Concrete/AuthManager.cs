@@ -29,9 +29,18 @@ namespace Business.Concrete
                 LastName = userForRegisterDto.LastName,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Status = true
+                Status = true,
+                ClaimId = 1
             };
             _userService.Add(user);
+
+            //var employeeId = _userService.GetByMail(userForRegisterDto.Email).Id;
+            //var claim = new EmployeeOperationClaim
+            //{
+            //    EmployeeId = employeeId,
+            //    OperationClaimId = 1
+            //};
+            //_operationClaimService.Add(claim);
             return new SuccessDataResult<Employee>(user, Messages.UserRegistered);
         }
 

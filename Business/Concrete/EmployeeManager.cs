@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core.Utilities.Results;
+using Entities.DTOs;
 
 namespace Business.Concrete
 {
@@ -17,6 +19,12 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
+
+        public DataResult<List<Employee>> GetEmployees()
+        {
+            return new SuccessDataResult<List<Employee>>(_userDal.GetAll());
+        }
+
 
         public List<OperationClaim> GetClaims(Employee user)
         {
@@ -31,6 +39,11 @@ namespace Business.Concrete
         public Employee GetByMail(string email)
         {
             return _userDal.Get(u => u.Email == email);
+        }
+
+        public DataResult<List<EmployeeDetailDto>> GetEmployeeDetails()
+        {
+            return new SuccessDataResult<List<EmployeeDetailDto>>(_userDal.GetEmployeeDetails().Data);
         }
     }
 }

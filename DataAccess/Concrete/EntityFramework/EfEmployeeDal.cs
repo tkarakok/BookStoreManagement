@@ -7,6 +7,8 @@ using Core.DataAccess.EntityFramework;
 using Core.Entities.Concrete;
 using DataAccess.Abstract;
 using System.Linq;
+using Core.Utilities.Results;
+using Entities.DTOs;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -22,6 +24,27 @@ namespace DataAccess.Concrete.EntityFramework
                     where userOperationClaim.EmployeeId == user.Id
                     select new OperationClaim { Id = operationClaim.Id, Name = operationClaim.Name };
                 return result.ToList();
+
+            }
+        }
+
+        public DataResult<List<EmployeeDetailDto>> GetEmployeeDetails()
+        {
+            using (var context = new BookStoreDatabaseContext())
+            {
+                var result = from employee in context.Employees
+                    join operationClaim in context.OperationClaims on employee.ClaimId equals operationClaim.Id
+                    where operationClaim.Id == employee.ClaimId
+                    select new EmployeeDetailDto
+                    {
+                        Id = employee.Id,
+                        FirstName = employee.FirstName,
+                        LastName = employee.LastName,
+                        Email = employee.Email,
+                        Claim = operationClaim.Name
+                        
+                    };
+                return new SuccessDataResult<List<EmployeeDetailDto>>(result.ToList());
 
             }
         }
