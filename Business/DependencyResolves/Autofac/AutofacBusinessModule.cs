@@ -23,6 +23,9 @@ namespace Business.DependencyResolves.Autofac
             builder.RegisterType<BookManager>().As<IBookService>();
             builder.RegisterType<EfBookDal>().As<IBookDal>();
 
+            builder.RegisterType<CustomerManager>().As<ICustomerService>();
+            builder.RegisterType<EfCustomerDal>().As<ICustomerDal>();
+
             builder.RegisterType<CategoryManager>().As<ICategoryService>();
             builder.RegisterType<EfCategoryDal>().As<ICategoryDal>();
 
