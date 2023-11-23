@@ -25,5 +25,7 @@ namespace Business.Constants
         public static string BookDeleted = "Book succesfully deleted !";
 
         public static string CustomerAdded = "Customers succesfully added !";
+
+        public static string RentalSucces = "Rental succes";
     }
 }
